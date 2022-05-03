@@ -1,8 +1,9 @@
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,11 +45,13 @@ import { FormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatGridListModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
 
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
