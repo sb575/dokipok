@@ -1,0 +1,76 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&family=Roboto&display=swap');
+
+$blue-accent: #1a8fbd;
+$blue-accent-hover: #097fc4;
+
+
+.mat-button {
+  padding: 0 15px 0 15px;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+::ng-deep .mat-button-a{
+  background-color: #1a8fbd00 !important;
+
+}
+
+.mat-icon{
+  display: inline-block;
+  max-width: 38px;
+  max-height: 38px;
+  margin: 15px;
+}
+
+
+.glassBox {
+  &, & * { box-sizing: border-box; transition: 400ms; }
+  display: inline-block;
+  margin: 29px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+  max-width: fit-content;
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  &__imgBox {
+    img {
+      width: 165px;
+      padding: 22px;
+    }
+  }
+  &__title {
+    text-align: center;
+    margin-top: 15px;
+    color: #006176;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: medium;
+    font-weight: bold;
+    display: inline-block;
+  }
+  &__content {
+    position: absolute;
+    right: 15px; bottom: 15px; left: 15px;
+    text-align: center;
+    color: #FFF;
+    font-size: 14px;
+    font-family: "Lato";
+    letter-spacing: .1em;
+    opacity: 0;
+  }
+  &:hover &__imgBox {
+    transform: translateY(30px);
+  }
+  &:hover &__imgBox img {
+    transform: translate(-20px, -40px) rotate(-15deg) scale(1.4);
+  }
+}

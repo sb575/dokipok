@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="glassBox" *ngFor="let pokemon of pokemons">
+    <div>
+      <h3 class="glassBox__title">Information about {{pokemon.name}}</h3>
+      <div class="d-table">
+        <div class="d-table-cell align-left">
+          <div  class="glassBox__imgBox">
+            <img [src]="pokemon.sprites.other.home.front_shiny" alt="Pokemon">
+          </div>
+        </div>
+
+        <div class=" align-right">
+          <mat-card class="mat-card">
+            <p class="p-format">Name: {{pokemon.name}}</p>
+            <p class="p-format">Forms: {{pokemon.forms[0].name}}</p>
+            <p class="p-format">Species: {{pokemon.species.name}}</p>
+            <p class="p-format">Weight: {{pokemon.weight}} kg</p>
+            <p class="p-format">Height: {{pokemon.height}} m</p>
+          </mat-card>
+        </div>
+
+        <div class="d-table-cell align-right">
+          <mat-card class="mat-card">
+            <h2 class="h2-title">Abilities:</h2>
+            <mat-chip-list class="mat-chip-list" *ngFor="let ability of pokemon.abilities; let i = index">
+              <mat-chip>{{pokemon.abilities[i].ability.name}}</mat-chip>            </mat-chip-list>
+            <h2 class="h2-title">Type:</h2>
+            <mat-chip-list *ngFor="let type of pokemon.types; let i = index">
+              <mat-chip>{{pokemon.types[i].type.name}}</mat-chip>
+            </mat-chip-list>
+          </mat-card>
+        </div>
+      </div>
+      <div class="save-button">
+        <button mat-button>save pokemon <mat-icon>favorite</mat-icon></button>
+      </div>
+    </div>
+  </div>
+</div>

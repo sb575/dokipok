@@ -1,0 +1,100 @@
+
+.d-table {
+  display: table;
+  width: 100%;
+  text-transform: lowercase;
+
+}
+
+.d-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.mat-button {
+  border-radius: 30px;
+  margin-right: 15px;
+  background-color: #53b4c7;
+  box-shadow: 8px 8px 16px rgba(187, 187, 187, 0.836),
+             -8px -8px 16px rgba(201, 201, 201, 0);
+
+}
+
+.mat-button:hover{
+  background-color: #008ead;
+}
+
+.mat-icon-button{
+  background-color: #53b4c7;
+  box-shadow: 8px 8px 16px rgba(187, 187, 187, 0.836),
+             -8px -8px 16px rgba(201, 201, 201, 0);
+}
+
+.mat-icon-button:hover{
+  background-color: #008ead;
+}
+
+img {
+  max-height: 40px;
+  max-width: 40px;
+  padding: 0%;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.mat-card{
+  width: 89%;
+  align-items: center;
+  height: 45px;
+  border-radius: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.589);
+  backdrop-filter: blur(2px);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+.logo-title{
+  color: #006176;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+  padding-left: 20px;
+  padding-right: 35px;
+  margin: 5px;
+  display: inline-flex;
+  vertical-align: middle;
+
+  .logo{
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+  }
+}
+
+.bola-pokemon{
+  width: 25px;
+  height: 25px;
+}
+
+
+

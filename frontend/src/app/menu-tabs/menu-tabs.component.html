@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card class="mat-card">
+    <div class="d-table">
+      <div class="d-table-cell align-left" >
+
+
+        <h1 class="logo-title"><img src="../assets/logos/logoDokiPok.svg" alt="" class="logo">DOKIPOK</h1>
+          <a routerLink = "/about"> <button mat-button>About<mat-icon>info</mat-icon></button></a>
+          <a routerLink = "/pokemons"> <button mat-button>Pokemons
+            <img src="/assets/bolaPokemon.png" class="bola-pokemon" alt="">
+          </button></a>
+          <button mat-button>Favorite list  <mat-icon>favorite</mat-icon></button>
+
+      </div>
+      <div class="d-table-cell align-right">
+        <button mat-icon-button>
+          <mat-icon>person</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>
+<router-outlet></router-outlet>
