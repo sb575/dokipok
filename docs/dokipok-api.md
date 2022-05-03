@@ -8,6 +8,6 @@
 ## Documentation
 ### https://rapidapi.com/lduran2-CvRRB1hLBCj/api/pokedex2/
 
-## Connect to Tasty API
+## Connect to Poke API
 ### https://rapidapi.com/auth/sign-up?referral=/lduran2-CvRRB1hLBCj/api/pokedex2/
 
