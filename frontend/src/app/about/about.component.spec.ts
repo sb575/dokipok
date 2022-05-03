@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';
 
-/*describe('AboutComponent', () => {
+describe('AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
@@ -22,4 +22,4 @@ import { AboutComponent } from './about.component';
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});*/
+});

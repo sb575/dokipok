@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuTabsComponent } from './menu-tabs.component';
 
-/*describe('MenuTabsComponent', () => {
+describe('MenuTabsComponent', () => {
   let component: MenuTabsComponent;
   let fixture: ComponentFixture<MenuTabsComponent>;
 
@@ -23,4 +23,4 @@ import { MenuTabsComponent } from './menu-tabs.component';
     expect(component).toBeTruthy();
   });
 });
-*/
+
