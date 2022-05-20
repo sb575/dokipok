@@ -41,3 +41,5 @@ jobs:
           folder: frontend/dist/dokipok
           clean: true
           single-commit: true
+
+          
