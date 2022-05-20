@@ -1,17 +1,18 @@
 <app-search-bar (emitSearch)="getSearch($event)"></app-search-bar>
 
-<div class="container">
-  <div class="glassBox"  *ngFor="let pokemon of pokemons">
-    <div>
-      <h3 class="glassBox__title">{{pokemon.name}}</h3>
-      <div  class="glassBox__imgBox">
-        <img [src]="pokemon.sprites.other.home.front_shiny" alt="Pokemon">
-      </div>
-      <a routerLink = "/details/{{pokemon.id}}"> <button mat-button >See more details </button></a>
+<div class="container" *ngIf="pokemons != undefined">
 
-    </div>
-    <div class="glassBox__content">
-    </div>
+<div class="glassBox"  *ngFor="let pokemon of pokemons">
+      <div>
+        <div id="card">
+          <span class="Card-id">{{pokemon.id}}</span>
+          <h3 class="glassBox__title">{{pokemon.name}}</h3>
+          <div  class="glassBox__imgBox">
+              <img [src]="pokemon.sprites.other.home.front_shiny" alt="Pokemon" class="card-logo">
+          </div>
+          <a routerLink = "/pokemons/{{pokemon.id}}"> <button mat-button >See more details </button></a>
+        </div>
+      </div>
   </div>
 </div>
 

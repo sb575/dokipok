@@ -4,18 +4,14 @@
       <div class="d-table-cell align-left" >
 
 
-        <h1 class="logo-title"><img src="assets/Icons/logoDokiPok.svg" class="logo">DOKIPOK</h1>
-          <a routerLink = "/about"> <button mat-button>About<mat-icon>info</mat-icon></button></a>
+        <h1 class="logo-title"><a class="navbar-brand" href="#"><img src="assets/Icons/logoDokiPok.svg" class="logo"></a>DOKIPOK</h1>
+
+          <a routerLink = "/topPokemons"> <button mat-button>Top pokemons<mat-icon>star</mat-icon></button></a>
           <a routerLink = "/pokemons"> <button mat-button>Pokemons
             <img src="assets/bolaPokemon.png" class="bola-pokemon">
           </button></a>
-          <button mat-button>Favorite list  <mat-icon>favorite</mat-icon></button>
+          <a routerLink = "/favorites"> <button mat-button>Favorite list  <mat-icon>favorite</mat-icon></button></a>
 
-      </div>
-      <div class="d-table-cell align-right">
-        <button mat-icon-button>
-          <mat-icon>person</mat-icon>
-        </button>
       </div>
     </div>
   </mat-card>

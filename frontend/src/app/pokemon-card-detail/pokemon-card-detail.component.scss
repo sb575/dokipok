@@ -20,10 +20,13 @@ $blue-accent-hover: #097fc4;
 
 .align-left {
   text-align: left;
+  display: inline-flex;
+
 }
 
 .align-right {
   text-align: right;
+  display: inline-flex;
 }
 
 .mat-button {
@@ -38,7 +41,7 @@ $blue-accent-hover: #097fc4;
 }
 
 .mat-card{
-  display: inline-block;
+  display: flexbox;
   margin: 25px;
   padding-left: 15px;
   padding-right: 15px;
@@ -51,6 +54,11 @@ $blue-accent-hover: #097fc4;
   border-bottom-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   text-align: left;
+}
+
+.mat-card:hover{
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-15px);
 }
 
 .p-format{
@@ -92,7 +100,7 @@ $blue-accent-hover: #097fc4;
 
 .glassBox {
   &, & * { box-sizing: border-box; transition: 400ms; }
-  display: inline-block;
+  display: flexbox;
   margin: 29px;
   padding-left: 15px;
   padding-right: 15px;
@@ -107,8 +115,9 @@ $blue-accent-hover: #097fc4;
   text-align: center;
   &__imgBox {
     img {
-      width: 199px;
+      width: 205px;
       padding: 22px;
+      vertical-align: middle;
     }
   }
   &__title {
@@ -120,8 +129,8 @@ $blue-accent-hover: #097fc4;
     font-size: medium;
     font-weight: bold;
   }
+
   &__content {
-    position: absolute;
     right: 15px; bottom: 15px; left: 15px;
     text-align: center;
     color: #FFF;
@@ -134,15 +143,17 @@ $blue-accent-hover: #097fc4;
     transform: translateY(30px);
   }
   &:hover &__imgBox img {
-    transform: translate(-20px, -40px) rotate(-15deg) scale(1.4);
+    transform: translate(-20px, -40px) rotate(-10deg) scale(1.5);
   }
 }
 
 .container{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
+
+
 
 .mat-chip{
   padding: 14px;
@@ -150,3 +161,13 @@ $blue-accent-hover: #097fc4;
   color: #FFF;
   text-transform: capitalize;
 }
+
+.types {
+  display: inline-flex;
+  margin: 15px 10px 5px 0px;
+  padding: 5px 10px;
+  text-shadow: black 1px 1px 1px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
