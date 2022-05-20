@@ -18,8 +18,15 @@ import { PokemonCardDetailComponent } from './pokemon-card-detail/pokemon-card-d
 import {MatChipsModule} from '@angular/material/chips';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatGridListModule} from '@angular/material/grid-list'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule , HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { CustomHttpInterceptor } from './hhtp-interceptor';
+import { FavoritePokemonComponent } from './favorite-pokemon/favorite-pokemon.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FlipModule } from 'ngx-flip';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 
 @NgModule({
@@ -30,7 +37,12 @@ import { FormsModule } from '@angular/forms';
     PokemonCardComponent,
     PokemonListComponent,
     AboutComponent,
-    PokemonCardDetailComponent
+    PokemonCardDetailComponent,
+    SpinnerComponent,
+    FavoritePokemonComponent,
+    NavbarComponent,
+    PageNotFoundComponent
+
   ],
   imports: [
     BrowserModule,
@@ -46,11 +58,16 @@ import { FormsModule } from '@angular/forms';
     MatGridListModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    FlipModule
 
 
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: CustomHttpInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

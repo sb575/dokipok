@@ -1,3 +1,4 @@
+import { FavoritePokemonComponent } from './favorite-pokemon/favorite-pokemon.component';
 import { PokemonCardDetailComponent } from './pokemon-card-detail/pokemon-card-detail.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,10 +7,10 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/pokemons', pathMatch: 'full' },
-  { path: 'about', component: AboutComponent },
+  { path: 'topPokemons', component: AboutComponent },
   { path: 'pokemons', component: PokemonListComponent },
-  { path: 'details/:id', component: PokemonCardDetailComponent }
-
+  { path: 'pokemons/:id', component: PokemonCardDetailComponent},
+  { path: 'favorites', component: FavoritePokemonComponent}
 ];
 
 @NgModule({

@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ApiDokipokService } from '../api-dokipok.service';
 
+
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -18,7 +20,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   search(value: string){
-    this.emitSearch.emit(value);
+      this.emitSearch.emit(value);
   }
 
 }
