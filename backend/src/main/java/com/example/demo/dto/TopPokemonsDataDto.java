@@ -6,7 +6,6 @@ public class TopPokemonsDataDto {
     public String description;
 
     public TopPokemonsDataDto() {
-
     }
 
     public TopPokemonsDataDto(String title, String image,  String description) {
