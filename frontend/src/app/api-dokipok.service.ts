@@ -16,7 +16,7 @@ export class ApiDokipokService {
       {
         'Content-Type': 'application/json'
       })
-    }
+    };
   constructor(private http: HttpClient) { }
 
   getPokemons(){
@@ -24,6 +24,7 @@ export class ApiDokipokService {
   }
 
   getMoreData(name: string){
+    console.log(name)
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
 
@@ -33,7 +34,8 @@ export class ApiDokipokService {
   }*/
 
   getPokemon(id: number): Observable<Pokemon> {
-    return this.http.get<Pokemon>(this.dokipokUrl + id, this.httpOptions);
+    console.log(id)
+    return this.http.get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${id}`, this.httpOptions);
   }
 
   /*savePokemon(id: number){

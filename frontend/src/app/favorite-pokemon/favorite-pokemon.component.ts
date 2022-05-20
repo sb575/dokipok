@@ -31,15 +31,15 @@ export class FavoritePokemonComponent implements OnInit {
   }
 
   getSavedPokemons(): void {
-
+    this.pokemons = [];
     this.backend.getSavedPokemons().subscribe( pokemones => {
-      var ids: any;
       for (let pokemon of pokemones) {
-        ids = pokemon.id;
+        console.log(pokemon.id)
+        this.data.getPokemon(pokemon.id).subscribe((json:any) => {
+          this.pokemons!.push(json.pokemones);
+        });
       }
-      this.data.getPokemon(ids!).subscribe((json:any) => {
-        this.pokemones = json.pokemones;
-      });
+
     })
   }
 

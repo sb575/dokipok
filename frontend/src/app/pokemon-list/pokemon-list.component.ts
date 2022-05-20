@@ -23,7 +23,7 @@ export class PokemonListComponent implements OnInit {
     this.data.getPokemons()
     .subscribe((response: any) => {
       response.results.forEach((result: { name: string}) => {
-        this.data.getMoreData(result.name)
+        if(result.name) this.data.getMoreData(result.name)
         .subscribe((uniqResponse: any) => {
           this.pokemons.push(uniqResponse);
           console.log(this.pokemons);
@@ -33,10 +33,7 @@ export class PokemonListComponent implements OnInit {
 
   }
 
-  flip = false;
-  rotate() {
-    this.flip = !this.flip;
-  }
+
   getSearch(value: string){
     const filter = this.AllPokemons.filter((res: any) => {
       return !res.name.indexOf(value.toLowerCase());

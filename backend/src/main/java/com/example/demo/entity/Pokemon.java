@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+//import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "pokemon")
@@ -14,6 +15,8 @@ public class Pokemon {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
   
+    /*@NotBlank(message = "Name is mandatory")
+    private String name;*/
 
     public Pokemon() {}
 
@@ -26,6 +29,14 @@ public class Pokemon {
         this.id = id;
     }
 
+   /* public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+*/
 
     @Override
     public String toString() {

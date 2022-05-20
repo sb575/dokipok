@@ -10,6 +10,8 @@ export class BackendService {
   private pokemonsUrl = 'http://localhost:8081/api/pokemons';  // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+
+
   };
 
   constructor( private http: HttpClient ) { }
