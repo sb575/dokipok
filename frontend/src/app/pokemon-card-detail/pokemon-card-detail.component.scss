@@ -29,11 +29,7 @@ $blue-accent-hover: #097fc4;
   display: inline-flex;
 }
 
-.mat-button {
-  padding: 0 15px 0 15px;
-  border-radius: 30px;
-  margin: 10px;
-}
+
 
 ::ng-deep .mat-button-a{
   background-color: #1a8fbd00 !important;
@@ -55,6 +51,7 @@ $blue-accent-hover: #097fc4;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   text-align: left;
 }
+
 
 .mat-card:hover{
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
@@ -78,13 +75,6 @@ $blue-accent-hover: #097fc4;
   color: #006176;
 }
 
-
-.save-button{
-
-  text-align: left;
-  padding-bottom: 15px;
-
-}
 
 .mat-button {
   padding: 0px 15px 0px 15px !important;
@@ -171,3 +161,10 @@ $blue-accent-hover: #097fc4;
   font-size: 15px;
 }
 
+.description{
+  text-align: left;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+}

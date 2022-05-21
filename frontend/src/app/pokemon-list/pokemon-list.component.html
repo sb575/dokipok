@@ -16,4 +16,12 @@
   </div>
 </div>
 
+<div  class="container" *ngIf="pokemons.length == 0">
+  <h1 class="h1">Opps!</h1>
+  <h2 class="h2">Pokemon not found, search again!</h2>
+  <img src="assets/pokeNotFound.png" class="pokemon">
+</div>
+
+
+
 <router-outlet></router-outlet>
