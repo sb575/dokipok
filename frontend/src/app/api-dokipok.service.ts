@@ -17,6 +17,7 @@ export class ApiDokipokService {
         'Content-Type': 'application/json'
       })
     }
+
   constructor(private http: HttpClient) { }
 
   getPokemons(){
