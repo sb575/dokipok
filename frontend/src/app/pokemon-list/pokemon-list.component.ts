@@ -15,6 +15,7 @@ export class PokemonListComponent implements OnInit {
   private AllPokemons:any = this.pokemons
   name: string | undefined
   pokemon?: Pokemon;
+  pokemone?: any;
 
 
   constructor(private data: ApiDokipokService,  private backend: BackendService) { }
@@ -23,7 +24,7 @@ export class PokemonListComponent implements OnInit {
     this.data.getPokemons()
     .subscribe((response: any) => {
       response.results.forEach((result: { name: string}) => {
-        this.data.getMoreData(result.name)
+        if(result.name) this.data.getMoreData(result.name)
         .subscribe((uniqResponse: any) => {
           this.pokemons.push(uniqResponse);
           console.log(this.pokemons);
