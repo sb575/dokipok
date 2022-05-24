@@ -9,8 +9,8 @@ public class TopPokemonsDataDto {
     }
 
     public TopPokemonsDataDto(String title, String image,  String description) {
-        this.image = image;
         this.title = title;
+        this.image = image;
         this.description = description;
     }
 }

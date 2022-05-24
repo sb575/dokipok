@@ -1,8 +1,7 @@
-<div class="about">
-  <mat-card class="mat-card">
-    <app-pokemon-card></app-pokemon-card>
-  </mat-card>
+<div class="cards">
+    <div class="card" *ngFor="let topPokemon of topPokemons">
+      <h2 class="card-title">{{topPokemon.title}}</h2>
+      <img [src]="topPokemon.image" alt="">
+      <p class="card-desc">{{topPokemon.description}}</p>
+    </div>
 </div>
-
-
-
