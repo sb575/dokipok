@@ -19,14 +19,13 @@ public class TopPokemonsDataService {
 
         try {
             Document webPage = Jsoup.connect("https://www.kawaiionline.top/blog/los-pokemon-mas-poderosos/").get();
-            Element article = webPage.getElementById("post-1586").getElementsByTag("article").get(0);
 
-            List<Element> divs = article.getElementsByClass("inside-article");
+            List<Element> divs = webPage.getElementsByClass("wp-block-image");
 
             for (Element div : divs) {
-                String title = div.getElementsByTag("h3").get(0).getElementsByTag("strong").text();
-                String image = div.getElementsByTag("img").get(1).attr("src");
-                String description = div.getElementsByTag("p").get(3).text();
+                String title = div.previousElementSibling().getElementsByTag("h3").get(0).getElementsByTag("strong").text();
+                String image = div.getElementsByTag("img").get(0).attr("src");
+                String description = div.nextElementSibling().getElementsByTag("p").get(0).text();
                 
                 topPokemonsData.add(new TopPokemonsDataDto(title, image, description));
             }

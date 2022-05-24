@@ -1,4 +1,7 @@
+import { ApiDokipokService } from './../api-dokipok.service';
+import { TopPokemons } from './../topPokemons';
 import { Component, OnInit } from '@angular/core';
+import { SrapingService } from '../sraping.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  topPokemons?: TopPokemons[];
+
+  constructor(  private data: ApiDokipokService,
+    private scraping: SrapingService) { }
 
   ngOnInit(): void {
+    this.getTopPokemons();
+  }
+  getTopPokemons(): void {
+    this.scraping.getTopPokemons().subscribe( topPokemons => this.topPokemons = topPokemons );
   }
 
 }
