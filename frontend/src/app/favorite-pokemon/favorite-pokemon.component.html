@@ -2,10 +2,10 @@
 <div class="container">
 
   <div class="favorite" *ngIf="pokemons != undefined">
-    <div *ngFor="let pokemon of pokemons">
-      <mat-card class="mat-card">
+    <div *ngIf="add">
+      <div *ngFor="let pokemon of pokemons">
         <app-pokemon-card-detail></app-pokemon-card-detail>
-      </mat-card>
+    </div>
     </div>
   </div>
 
