@@ -20,7 +20,6 @@ export class PokemonCardDetailComponent implements OnInit {
   pokemon?: Pokemon;
   @Input() add?: Boolean;
 
-  location?: String;
 
   constructor(private data: ApiDokipokService, private route: ActivatedRoute, private backend: BackendService) { }
 
@@ -80,7 +79,7 @@ export class PokemonCardDetailComponent implements OnInit {
 
   remove(): void {
     if (this.pokemon) {
-      this.backend.remove(this.pokemon).subscribe( () => window.location.reload());
+      this.backend.remove(this.pokemon).subscribe();
     }
   }
 

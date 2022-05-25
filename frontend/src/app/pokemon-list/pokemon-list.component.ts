@@ -34,10 +34,6 @@ export class PokemonListComponent implements OnInit {
 
   }
 
-  flip = false;
-  rotate() {
-    this.flip = !this.flip;
-  }
   getSearch(value: string){
     const filter = this.AllPokemons.filter((res: any) => {
       return !res.name.indexOf(value.toLowerCase());
@@ -54,7 +50,7 @@ export class PokemonListComponent implements OnInit {
 
   remove(): void {
     if (this.pokemon) {
-      this.backend.remove(this.pokemon).subscribe( () => window.location.reload());
+      this.backend.remove(this.pokemon).subscribe();
     }
   }
 

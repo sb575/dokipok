@@ -16,7 +16,6 @@ export class FavoritePokemonComponent implements OnInit {
   pokemones?: Pokemon[];
   pokemon?: Pokemon;
 
-  location?: String;
   add: Boolean = true;
 
   constructor(private data: ApiDokipokService, private route: ActivatedRoute, private backend: BackendService) { }
