@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'pokemons', component: PokemonListComponent },
   { path: 'pokemons/:id', component: PokemonCardDetailComponent},
   { path: 'favorites', component: FavoritePokemonComponent},
-  { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
+  {path: 'error', component: PageNotFoundComponent}
 ];
 
 @NgModule({
