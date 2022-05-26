@@ -1,10 +1,10 @@
-
 <div class="container">
-  <div class="favorite" *ngIf="pokemons != undefined">
-    <div *ngIf="add">
+  <div class="glassBox">
+    <h2 class="card-title">FAVORITE POKEMON LIST</h2>
+    <div *ngIf="pokemons != undefined">
       <div *ngFor="let pokemon of pokemons">
-        <app-pokemon-card-detail></app-pokemon-card-detail>
-    </div>
+        <app-pokemon-card [id]="pokemon.id" (refresh)="getSavedPokemons()"></app-pokemon-card>
+      </div>
     </div>
   </div>
 </div>
