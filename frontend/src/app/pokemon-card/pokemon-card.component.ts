@@ -27,6 +27,10 @@ export class PokemonCardComponent implements OnInit {
     });
   }
 
+  reset(): void {
+    this.pokemons = [];
+  }
+
   remove(): void {
     if (this.pokemon) {
       this.backend.remove(this.pokemon).subscribe( () => this.refresh.emit());
