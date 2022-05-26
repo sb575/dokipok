@@ -1,0 +1,8 @@
+{
+    "name": "dokipok",
+    "buildpacks": [
+      {
+        "url": "heroku/gradle"
+      }
+    ]
+  }
