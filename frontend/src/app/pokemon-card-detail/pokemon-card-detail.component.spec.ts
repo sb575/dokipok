@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonCardDetailComponent } from './pokemon-card-detail.component';
 
-/*describe('PokemonCardDetailComponent', () => {
+describe('PokemonCardDetailComponent', () => {
   let component: PokemonCardDetailComponent;
   let fixture: ComponentFixture<PokemonCardDetailComponent>;
 
@@ -19,8 +19,8 @@ import { PokemonCardDetailComponent } from './pokemon-card-detail.component';
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+ /* it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  });*/
 });
-*/
+

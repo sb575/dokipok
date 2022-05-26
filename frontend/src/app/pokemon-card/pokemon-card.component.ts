@@ -1,4 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ApiDokipokService } from '../api-dokipok.service';
+import { BackendService } from '../backend.service';
+import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -7,12 +11,32 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PokemonCardComponent implements OnInit {
 
-  @Input() id :number | undefined;
+  @Output() refresh: EventEmitter<String> = new EventEmitter();
 
 
-  constructor() { }
+  @Input() id?:number;
+  pokemons: any[] = []
+  name: string | undefined
+  pokemon?: any;
+  pokemones?: Pokemon;
+
+
+  constructor(private data: ApiDokipokService, private route: ActivatedRoute, private backend: BackendService) { }
+
 
   ngOnInit(): void {
+
+     this.data.getPokemon(this.id!).subscribe( (pokemon) => {
+      this.pokemon=pokemon;
+    });
   }
+
+
+  remove(): void {
+    if (this.pokemon) {
+      this.backend.remove(this.pokemon).subscribe( () => this.refresh.emit());
+    }
+  }
+
 
 }

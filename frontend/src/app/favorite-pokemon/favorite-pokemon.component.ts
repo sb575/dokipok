@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Pokemon } from './../pokemon';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiDokipokService } from '../api-dokipok.service';
 import { BackendService } from '../backend.service';
-import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-favorite-pokemon',
@@ -11,7 +11,9 @@ import { Pokemon } from '../pokemon';
 })
 export class FavoritePokemonComponent implements OnInit {
 
-  id: number | undefined;
+
+  @Output() refresh: EventEmitter<String> = new EventEmitter();
+
   pokemons: any[] = [];
   pokemones?: Pokemon[];
   pokemon?: Pokemon;
@@ -25,6 +27,7 @@ export class FavoritePokemonComponent implements OnInit {
       if (object[0].path === "favorites") {
         this.add = false;
         this.getSavedPokemons();
+        this.refresh.emit();
       }
     })
   }
@@ -34,13 +37,11 @@ export class FavoritePokemonComponent implements OnInit {
     this.backend.getSavedPokemons().subscribe( pokemones => {
       this.pokemons = [];
       for (let pokemon of pokemones) {
-        console.log(pokemon.id)
         this.data.getPokemon(pokemon.id).subscribe((json:any) => {
-          this.pokemons!.push(json.pokemones);
+          this.pokemons.push(json);
+          console.log(this.pokemons)
         });
       }
-
-    })
+    });
   }
-
 }

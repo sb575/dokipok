@@ -1,6 +1,6 @@
 import { Pokemon } from './../pokemon';
 import { ApiDokipokService } from './../api-dokipok.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BackendService } from '../backend.service';
 
@@ -12,7 +12,9 @@ import { BackendService } from '../backend.service';
 })
 export class PokemonCardDetailComponent implements OnInit {
 
-  id: number | undefined;
+  @Output() refresh: EventEmitter<String> = new EventEmitter();
+
+  @Input() id?:number;
   pokemons: any[] = [];
   species: any[] = [];
   evolutions: any[] = [];
@@ -36,7 +38,6 @@ export class PokemonCardDetailComponent implements OnInit {
      this.data.getPokemon(this.id!).subscribe( (pokemon) => {
       this.pokemon=pokemon;
     });
-
   }
 
   getEvolutions(){
@@ -73,14 +74,10 @@ export class PokemonCardDetailComponent implements OnInit {
 
   save(): void {
     if (this.pokemon) {
-      this.backend.save(this.pokemon).subscribe();
+      this.backend.save(this.pokemon).subscribe(() => this.refresh.emit());
     }
   }
 
-  remove(): void {
-    if (this.pokemon) {
-      this.backend.remove(this.pokemon).subscribe();
-    }
-  }
+
 
 }

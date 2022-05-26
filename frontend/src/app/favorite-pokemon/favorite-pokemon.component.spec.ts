@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FavoritePokemonComponent } from './favorite-pokemon.component';
 
-/*describe('FavoritePokemonComponent', () => {
+describe('FavoritePokemonComponent', () => {
   let component: FavoritePokemonComponent;
   let fixture: ComponentFixture<FavoritePokemonComponent>;
 
@@ -19,7 +19,7 @@ import { FavoritePokemonComponent } from './favorite-pokemon.component';
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  /*it('should create', () => {
     expect(component).toBeTruthy();
-  });
-});*/
+  });*/
+});
