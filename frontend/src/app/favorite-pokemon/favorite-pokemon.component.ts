@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiDokipokService } from '../api-dokipok.service';
 import { BackendService } from '../backend.service';
@@ -11,7 +11,9 @@ import { Pokemon } from '../pokemon';
 })
 export class FavoritePokemonComponent implements OnInit {
 
-  id: number | undefined;
+  @Output() refresh: EventEmitter<String> = new EventEmitter();
+
+
   pokemons: any[] = [];
   pokemones?: Pokemon[];
   pokemon?: Pokemon;
@@ -36,7 +38,8 @@ export class FavoritePokemonComponent implements OnInit {
       for (let pokemon of pokemones) {
         console.log(pokemon.id)
         this.data.getPokemon(pokemon.id).subscribe((json:any) => {
-          this.pokemons!.push(json.pokemones);
+          this.pokemons.push(json);
+          console.log(this.pokemons);
         });
       }
 
