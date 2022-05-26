@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiDokipokService } from '../api-dokipok.service';
 import { BackendService } from '../backend.service';
 import { Pokemon } from '../pokemon';
@@ -10,8 +10,6 @@ import { Pokemon } from '../pokemon';
   styleUrls: ['./favorite-pokemon.component.scss']
 })
 export class FavoritePokemonComponent implements OnInit {
-
-  @Output() refresh: EventEmitter<String> = new EventEmitter();
 
 
   pokemons: any[] = [];
@@ -28,7 +26,7 @@ export class FavoritePokemonComponent implements OnInit {
         this.add = false;
         this.getSavedPokemons();
       }
-    })
+    });
   }
 
   getSavedPokemons(): void {
@@ -42,8 +40,9 @@ export class FavoritePokemonComponent implements OnInit {
           console.log(this.pokemons);
         });
       }
-
-    })
+    });
   }
+
+
 
 }
