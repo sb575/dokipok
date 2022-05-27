@@ -27,9 +27,6 @@ export class PokemonCardComponent implements OnInit {
     });
   }
 
-  reset(): void {
-    this.pokemons = [];
-  }
 
   remove(): void {
     if (this.pokemon) {
