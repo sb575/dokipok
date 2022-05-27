@@ -33,7 +33,7 @@ public class PokemonController {
 
     @GetMapping("/{id}")
     public Pokemon one(@PathVariable long id) {
-        return pokemonRepo.findById(id).get();
+        return pokemonRepo.findById(id).orElseThrow();
     }
 
     @DeleteMapping("/{id}")
