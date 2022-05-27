@@ -6,5 +6,12 @@
         <app-pokemon-card [id]="pokemon.id" (refresh)="getSavedPokemons()"></app-pokemon-card>
       </div>
     </div>
+
+    <div *ngIf="pokemons.length == 0">
+        <h2 class="h2">You don't have any favorite pokemon yet! <mat-icon class="mat-icon">sentiment_dissatisfied</mat-icon></h2>
+    </div>
+
   </div>
 </div>
+
+

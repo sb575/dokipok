@@ -11,7 +11,6 @@ import javax.persistence.Table;
 public class Pokemon {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
   
 
