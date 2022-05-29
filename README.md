@@ -3,7 +3,7 @@
 Development of a web application called DokiPok using the Pokémon public API (PokeAPI), to obtain information about them. 
 
 <p align="center">
-<img src="" width="40%">
+<img src="https://miro.medium.com/max/785/1*I9paH_iKTmSeYs1HzRzuag.png" width="40%">
 </p>
 
 
@@ -11,7 +11,7 @@ Development of a web application called DokiPok using the Pokémon public API (P
 
 Website : <a href="https://sb575.github.io/dokipok/">[https://sb575.github.io/dokipok/](https://sb575.github.io/dokipok/)</a>
 
-![]()
+![](https://github.com/sb575/dokipok/blob/main/frontend/src/assets/DokiPok_previsualizacion.gif)
 
 
 
