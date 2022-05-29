@@ -1,8 +1,9 @@
 import { Pokemon } from './../pokemon';
 import { ApiDokipokService } from './../api-dokipok.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { BackendService } from '../backend.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class PokemonCardDetailComponent implements OnInit {
   @Input() add?: Boolean;
 
 
-  constructor(private data: ApiDokipokService, private route: ActivatedRoute, private backend: BackendService) { }
+  constructor(private data: ApiDokipokService, private router: Router, private route: ActivatedRoute, private backend: BackendService) {
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -71,11 +73,9 @@ export class PokemonCardDetailComponent implements OnInit {
       });
   }
 
-
-
   save(): void {
     if (this.pokemon) {
-      this.backend.save(this.pokemon).subscribe(() => this.refresh.emit());
+      this.backend.save(this.pokemon).subscribe();
     }
   }
 
