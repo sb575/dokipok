@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ApiDokipokService } from '../api-dokipok.service';
 import { BackendService } from '../backend.service';
 import { Pokemon } from '../pokemon';
@@ -12,11 +13,16 @@ import { Pokemon } from '../pokemon';
 export class FavoritePokemonComponent implements OnInit {
 
 
+  @Output() refresh: EventEmitter<String> = new EventEmitter();
+
   pokemons: any[] = [];
   pokemones?: Pokemon[];
   pokemon?: Pokemon;
 
   add: Boolean = true;
+
+  subscription!: Subscription
+
 
   constructor(private data: ApiDokipokService, private route: ActivatedRoute, private backend: BackendService) { }
 
@@ -24,9 +30,14 @@ export class FavoritePokemonComponent implements OnInit {
     this.route.url.subscribe( (object: any) => {
       if (object[0].path === "favorites") {
         this.add = false;
-        this.getSavedPokemons();
+
+        this.subscription = this.backend.refresh$.subscribe(() => this.getSavedPokemons());
       }
     });
+  }
+
+  ngOnDestroy(): void{
+    this.subscription.unsubscribe;
   }
 
   getSavedPokemons(): void {
@@ -42,7 +53,4 @@ export class FavoritePokemonComponent implements OnInit {
       }
     });
   }
-
-
-
 }
