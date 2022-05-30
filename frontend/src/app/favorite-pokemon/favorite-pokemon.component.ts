@@ -30,7 +30,7 @@ export class FavoritePokemonComponent implements OnInit {
     this.route.url.subscribe( (object: any) => {
       if (object[0].path === "favorites") {
         this.add = false;
-
+        this.getSavedPokemons();
         this.subscription = this.backend.refresh$.subscribe(() => this.getSavedPokemons());
       }
     });
