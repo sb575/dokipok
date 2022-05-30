@@ -8,7 +8,7 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class BackendService {
-  private pokemonsUrl = 'http://localhost:8081/api/pokemons';  // URL to web api
+  private pokemonsUrl = 'https://dokipok.herokuapp.com/api/pokemons';  // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

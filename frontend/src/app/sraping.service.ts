@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class SrapingService {
 
-  private topPokemonsUrl = 'http://localhost:8081/api/topPokemons/data';  // URL to web api
+  private topPokemonsUrl = 'https://dokipok.herokuapp.com/api/topPokemons/data';  // URL to web api
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
