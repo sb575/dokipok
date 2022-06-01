@@ -6,12 +6,25 @@ Development of a web application called DokiPok using the Pokémon public API (P
 <img src="https://miro.medium.com/max/785/1*I9paH_iKTmSeYs1HzRzuag.png" width="40%">
 </p>
 
+## Architecture
+
+The architecture of the application is the one shown in the following image, in which the frontend is built in Angular that communicates with the API (in this case the pokemons API). The backend is made in Spring Boot which communicates with the Postgres database to get/save/delete pokemons.
+
+The frontend deployment has been done with github pages and Heroku has been used for the backend part.
+
+<p align="center">
+![](https://github.com/sb575/dokipok/blob/main/frontend/src/assets/DokiPok_previsualizacion.gif)
+</p>
+
+
 
 ## Application preview
 
 Website : <a href="https://sb575.github.io/dokipok/">[https://sb575.github.io/dokipok/](https://sb575.github.io/dokipok/)</a>
 
+<p align="center">
 ![](https://github.com/sb575/dokipok/blob/main/frontend/src/assets/DokiPok_previsualizacion.gif)
+</p>
 
 
 
