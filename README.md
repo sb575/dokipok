@@ -13,8 +13,9 @@ The architecture of the application is the one shown in the following image, in 
 The frontend deployment has been done with github pages and Heroku has been used for the backend part.
 
 <p align="center">
-![](https://github.com/sb575/dokipok/blob/main/frontend/src/assets/DokiPok_previsualizacion.gif)
+<img src="https://github.com/sb575/dokipok/blob/main/frontend/src/assets/architecture.jpg" width="40%">
 </p>
+
 
 
 
@@ -22,9 +23,7 @@ The frontend deployment has been done with github pages and Heroku has been used
 
 Website : <a href="https://sb575.github.io/dokipok/">[https://sb575.github.io/dokipok/](https://sb575.github.io/dokipok/)</a>
 
-<p align="center">
 ![](https://github.com/sb575/dokipok/blob/main/frontend/src/assets/DokiPok_previsualizacion.gif)
-</p>
 
 
 
