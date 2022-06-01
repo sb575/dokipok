@@ -13,7 +13,7 @@ The architecture of the application is the one shown in the following image, in 
 The frontend deployment has been done with github pages and Heroku has been used for the backend part.
 
 <p align="center">
-<img src="https://github.com/sb575/dokipok/blob/main/frontend/src/assets/architecture.jpg" width="40%">
+<img src="https://github.com/sb575/dokipok/blob/main/frontend/src/assets/architecture.jpg" width="70%">
 </p>
 
 
